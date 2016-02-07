@@ -1,0 +1,80 @@
+Behavior of One-Dimensional Binary Cellular Automata
+-or-
+Seeking Aperiodicity in Simple Systems
+
+Mechanism
+---------
+
+A one-dimensional binary cellular automata is an array of binary digits (bits), whose values at any discrete time t are determined by the values of that element's immediate neighbors at time t-1.
+
+The array is of finite length, and the complete state of the array at any time t is referred to as the configuration of the system at t.
+
+The system's configuration is determined at any time t in terms of the state of each element.  Any element's state at time t is defined as:
+
+	C[i](t) = F( L, R )
+
+where
+
+	C[i](t) is the value of the ith element of the configuration C at time t;
+
+	L = C[i-1](t-1) is the value of the ith element's left-hand neighbor at time t-1;
+
+	R = C[i+1](t+1) is the value of the ith element's right-hand neighbor at time t-1;
+
+	F(L,R) is the progression function, described below.
+
+That the system's behavior is defined entirely in terms of local interactions between elements is of primary interest.
+
+
+Progression Functions
+---------------------
+
+In a binary automata, there are 16 possible progression functions F(L,R), corresponding to the 16 possible logic functions having two inputs and one output.  
+
+ L   R   F(L,R)
+---|---|--------
+ 0 | 0 | f1
+ 0 | 1 | f2
+ 1 | 0 | f3
+ 1 | 1 | f4
+
+
+We name progression functions based on the values it places in the positions f1, f2, f3, and f4 in the truth table above.  For example, F[0000] produces 0 in response to any of the 4 possible input variations, corresponds to a truth table of:
+
+ L   R   F[0000](L,R)
+---|---|--------------
+ 0 | 0 | 0
+ 0 | 1 | 0
+ 1 | 0 | 0
+ 1 | 1 | 0
+
+
+while F[1001] corresponds to a function that takes the value 1 for inputs (0,0) and (1,1), but is 0 for all others.  This is a truth table represented as:
+
+ L   R   F[1001](L,R)
+---|---|--------------
+ 0 | 0 | 1
+ 0 | 1 | 0
+ 1 | 0 | 0
+ 1 | 1 | 1
+
+
+The names of progression functions are usually shortened to F[0] and F[9], corresponding to the decimal equivilent of the binary truth table outputs.
+
+
+
+Detecting Cycles
+----------------
+
+
+
+Experimental Results
+--------------------
+
+Effect of World Size
+
+Effect of Progression Function
+
+Effect of Initial State
+
+

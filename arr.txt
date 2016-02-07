@@ -1,0 +1,34 @@
+(world size includes the leader, which it probably shouldn't)
+
+These are from runs of configuration 9 ( 1001 ), using left and right
+neighbor from previous state to determine current state.
+
+world size	cycle
+10	14 or 28
+11	12
+13	16
+15	28
+16      30/60
+17      n/a (hits steady-state after 10 or so generations)
+18      30
+19      28/56
+20	1022 ( 2 less than 1k )
+21      24
+22      126/252
+25	16 / 32
+26	2046 ( 2 less than 2k )
+27	252
+28	2044
+29	56
+30	32766 (only 2 less than 32k)
+31      60
+32      62
+
+Since one of the cells is held constant, we should subtract one from the world
+size when looking for things that jump out.  We find that:
+
+19, 25, 27, and 29 
+
+all appear to have long cycles.  19 and 29 are prime; 25 and 27 both have factors.
+
+Doesn't appear that that is the pattern.
